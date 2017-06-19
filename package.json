@@ -1,0 +1,64 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React Starter",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahkleins/react-starter.git"
+  },
+  "author": "sarahkleins",
+  "homepage": "https://github.com/sarahkleins/react-starter#readme",
+  "scripts": {
+    "start": "budo index.js:bundle.js --live --p 3000",
+    "build": "browserify index.js | uglifyjs > bundle.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint-css": "stylelint main.css"
+  },
+  "engines": {
+    "yarn": "*"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.3.0",
+    "budo": "^9.4.1",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.14.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.9.0",
+    "jest-cli": "^20.0.4",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "stylelint": "^7.8.0",
+    "uglify-js": "^2.7.5"
+  }
+}
